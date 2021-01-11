@@ -1,0 +1,12 @@
+{
+  "modid": "stMod",
+  "name": "Star Trek Mod",
+  "author_list": ["JeanRean"],
+  "credits": "Basemod, ModTheSpire, #modding",
+  "description": "${project.description}",
+  "version": "${project.version}",
+  "sts_version": "${SlayTheSpire.version}",
+  "mts_version": "${ModTheSpire.version}",
+  "dependencies": ["basemod", "stslib"],
+  "update_json": ""
+}
