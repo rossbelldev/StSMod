@@ -49,5 +49,9 @@
   "starTrekMod:OrbSkill": {
     "NAME": "Get Orb",
     "DESCRIPTION": "Channel 1 Default Orb."
+  },
+  "starTrekMod:Zap": {
+    "NAME": "Zap!",
+    "Description": "Deal 6 damage with your phaser."
   }
 }
