@@ -1,10 +1,13 @@
 package starTrekMod.cards;
 
+import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import starTrekMod.DefaultMod;
@@ -12,24 +15,18 @@ import starTrekMod.characters.TheDefault;
 
 import static starTrekMod.DefaultMod.makeCardPath;
 
-public class Zap extends AbstractDynamicCard {
-
-    /*
-     * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
-     *
-     * Special Strike: Deal 7 (*) damage times the energy you currently have.
-     */
+public class Zappp extends CustomCard {
 
     // TEXT DECLARATION
-
-    //public static final String ID = DefaultMod.makeID(Zap.class.getSimpleName());
-    public static final String ID = "Zap";
+    public static final String ID = "starTrekMod:Zappp";
     public static final String IMG = makeCardPath("Zap.png");
-
     // /TEXT DECLARATION/
 
 
     // STAT DECLARATION
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -37,18 +34,17 @@ public class Zap extends AbstractDynamicCard {
     public static final CardColor COLOR = TheDefault.Enums.COLOR_GRAY;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 77;
-    private static final int UPGRADE_PLUS_DMG = 1;
+    private static final int DAMAGE = 7;
+    private static final int UPGRADE_PLUS_DMG = 2;
 
     public int specialDamage;
-
     // /STAT DECLARATION/
 
-    public Zap() {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+    public Zappp() {
+        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
 
-        isMultiDamage = true;
+        isMultiDamage = false;
     }
 
     // Actions the card should do.
